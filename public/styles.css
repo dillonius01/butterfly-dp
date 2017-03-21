@@ -1,0 +1,40 @@
+body {
+	box-sizing: border-box;
+	height: 100%;
+	margin: 0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
+}
+
+#initial-rating-container {
+	background-color: #2ce6ce;
+	padding: 2rem;
+}
+
+.banner {
+	width: 100%;
+}
+
+.jumbo-header {
+	width: 100%;
+}
+
+.jumbo {
+	width: 60vw;
+	display: block;
+	margin: 0 auto;
+	color: #606060;
+}
+
+.jumbo-content {
+	background-color: white;
+}
+
+#disclaimer {
+	padding: 0.5em;
+}
+
+#disclaimer h4 {
+	background-color: #2ce6ce;
+	color: white;
+	margin: 0;
+}
