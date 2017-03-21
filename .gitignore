@@ -4,5 +4,6 @@ npm-debug.log
 .DS_Store
 public/bundle.js
 public/bundle.js.map
+public/style.css
+public/style.css.map
 notes.txt
-
