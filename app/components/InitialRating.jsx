@@ -27,7 +27,14 @@ class InitialRating extends Component {
 						<div className="mood-container" onClick={this.smileyClick}>
 							{
 								createMoods()
-									.map((mood, index, arr) => <Smiley mood={mood} level={arr.length - index} key={index} />)
+									.map((mood, index, arr) => (
+										<Smiley
+											mood={mood}
+											level={arr.length - index}
+											key={index}
+											shadow={true}
+											background={true} />
+									))
 							}
 						</div>
 						<div id="disclaimer">

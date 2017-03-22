@@ -9,11 +9,17 @@ class StatefulFullForm extends Component {
     this.state = {
       open: false
     };
-    this.openSmileSelector = this.openSmileSelector.bind(this)
+    this.openSmileEditor = this.openSmileEditor.bind(this);
+    this.closeSmileEditor = this.closeSmileEditor.bind(this)
   }
 
-  openSmileSelector() {
-  	this.setState({ open: true })
+  openSmileEditor(evt) {
+    evt.stopPropagation();
+    this.setState({ open: true })
+  }
+
+  closeSmileEditor() {
+    this.setState({ open: false })
   }
 
 	render() {
@@ -22,7 +28,8 @@ class StatefulFullForm extends Component {
 
 			<FullForm
 				open={open}
-				openSmileSelector={this.openSmileSelector}
+				openSmileEditor={this.openSmileEditor}
+        closeSmileEditor={this.closeSmileEditor}
 				{...this.props}
 			/>
 		)

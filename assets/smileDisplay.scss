@@ -4,22 +4,22 @@
 	.company-name {
 		text-align: right;
 		margin: 0;
-		padding-top: 2rem;
-		padding-right: 2rem;
+		margin-top: -8rem;
+		margin-right: 2rem;
 		
 		@media screen and (max-width: 600px) {
 			display: none;
 		}
 
-		h3 {
+		h2 {
 			margin: 0;
 		}
 	}
 
 	.feedback-container {
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		width: 100%
 
 		p {
 			margin: 0;
@@ -33,11 +33,33 @@
 				color: $teal;
 			}	
 		}
+		
+		#smile-edit-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		.edit-icon-container {
+			background: $left-menu-green;
+			padding: 0.3rem;
+			border-radius: 10%;
+		}
 
 		.big-smiley-container {
 			background: $off-white;
 			border: 7px solid $off-white;
 			border-radius: 50%;
+		}
+
+		.feedback-text-container {
+			width: 66%;
+			margin-left: 2rem;
+			margin-right: 2rem;
 		}
 	}
 }

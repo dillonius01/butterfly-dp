@@ -1,13 +1,16 @@
 import React from 'react';
 
-const SmileDisplay = ({ feedbackText, smileyUrl, openSmileSelector }) => (
+const SmileDisplay = ({ feedbackText, smileyUrl, openSmileEditor }) => (
 	<div id="smile-display">
-		<div className="company-name">
-			<h3>Demo Inc.</h3>
-		</div>
+
 		<div className="feedback-container">
-			<div onClick={openSmileSelector}  className="big-smiley-container">
-				<img src={smileyUrl} />
+			<div id="smile-edit-container" onClick={openSmileEditor}>
+				<div className="edit-icon-container">
+					<img src="/public/assets/EditIcon.svg" />
+				</div>
+				<div  className="big-smiley-container">
+					<img src={smileyUrl} />
+				</div>
 			</div>
 			<div className="feedback-text-container">
 				<p>
@@ -15,14 +18,19 @@ const SmileDisplay = ({ feedbackText, smileyUrl, openSmileSelector }) => (
 				</p>
 				<p className="disclaimer">Your answers will <strong>always remain anonymous</strong></p>
 			</div>
+			<div className="company-name">
+				<h2>Demo Inc.</h2>
+			</div>
 		</div>
 	</div>
 );
 
+//onClick={openSmileEditor}
+
 SmileDisplay.propTypes = {
 	feedbackText: React.PropTypes.string.isRequired,
 	smileyUrl: React.PropTypes.string.isRequired,
-	openSmileSelector: React.PropTypes.func.isRequired
+	openSmileEditor: React.PropTypes.func.isRequired
 }
 
 export default SmileDisplay;

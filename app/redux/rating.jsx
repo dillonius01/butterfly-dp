@@ -11,7 +11,7 @@ export const updateRating = rating => ({
 
 export const clearRating = () => ({
 	type: CLEAR_RATING
-})
+});
 
 /* -------------       REDUCER     ------------------- */
 

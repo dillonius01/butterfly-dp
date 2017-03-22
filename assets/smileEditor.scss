@@ -1,3 +1,22 @@
 #smile-editor-container {
+	
+	background-color: $left-menu-green;
+	max-width: 600px;
+	padding: 1rem;
+	border-radius: 20px;
+
+	.mistake-text {
+		h4 {
+			margin-top: 0;
+		}
+		color: $off-white;
+		text-align: center;
+	}
+
+	.single-hover-container {
+		display: inline-block;
+		width: 20%;
+		text-align: center;
+	}
 
 }
