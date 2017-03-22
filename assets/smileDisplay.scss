@@ -6,6 +6,10 @@
 		margin: 0;
 		padding-top: 2rem;
 		padding-right: 2rem;
+		
+		@media screen and (max-width: 600px) {
+			display: none;
+		}
 
 		h3 {
 			margin: 0;
