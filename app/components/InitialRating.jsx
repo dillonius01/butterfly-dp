@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
 import Smiley from './Smiley';
-
+import { createMoods } from '../redux/selectors';
 
 class InitialRating extends Component {
 	constructor(props) {
 		super(props)
 		this.smileyClick = this.smileyClick.bind(this);
-		this.createMoods = this.createMoods.bind(this);
-	}
-
-	createMoods() {
-		return [
-			'VeryHappy',
-			'Happy',
-			'Neutral',
-			'Unhappy',
-			'VeryUnhappy'
-		]
 	}
 
 	smileyClick(evt) {
@@ -37,7 +26,7 @@ class InitialRating extends Component {
 						<h2>How is your week going?</h2>
 						<div className="mood-container" onClick={this.smileyClick}>
 							{
-								this.createMoods()
+								createMoods()
 									.map((mood, index, arr) => <Smiley mood={mood} level={arr.length - index} key={index} />)
 							}
 						</div>

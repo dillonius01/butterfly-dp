@@ -1,0 +1,39 @@
+#smile-display {
+	color: $off-white;
+	
+	.company-name {
+		text-align: right;
+		margin: 0;
+		padding-top: 2rem;
+		padding-right: 2rem;
+
+		h3 {
+			margin: 0;
+		}
+	}
+
+	.feedback-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		p {
+			margin: 0;
+			margin-left: 1rem;
+		}
+
+		.disclaimer {
+			margin-top: 0.5rem;
+			color: hsla(0,0%,100%,.6);
+			strong {
+				color: $teal;
+			}	
+		}
+
+		.big-smiley-container {
+			background: $off-white;
+			border: 7px solid $off-white;
+			border-radius: 50%;
+		}
+	}
+}
