@@ -7,7 +7,6 @@ const App = props => {
   return (
     <div>
       { children }
-      <Footer />
     </div>
   )
 }

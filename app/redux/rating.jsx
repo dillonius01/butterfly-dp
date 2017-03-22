@@ -6,7 +6,7 @@ const CLEAR_RATING = 'CLEAR_RATING';
 
 export const updateRating = rating => ({
   type: UPDATE_RATING,
-  rating
+  rating: +rating
 });
 
 export const clearRating = () => ({

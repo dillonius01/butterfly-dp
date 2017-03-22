@@ -1,0 +1,7 @@
+#full-form-content {
+
+	margin-left: 3rem;
+	width: calc(100vw - 3rem);
+	height: 150vh;
+	@include lin-grad($full-form-top-green, $left-menu-green)
+}

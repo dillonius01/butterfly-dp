@@ -1,0 +1,23 @@
+#left-menu {
+	background-color: $left-menu-green;
+	height: 100vh;
+	width: 3rem;
+	position: fixed;
+	float: left;
+
+	.icon-container {
+		img {
+			display: block;
+			margin: 0 auto;
+			margin-top: 0.5rem;
+		}
+	}
+
+	.info {
+		margin-top: 89vh;
+	}
+
+	#info-icon:hover {
+		color: blue;
+	}
+}

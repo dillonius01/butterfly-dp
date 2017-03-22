@@ -7,16 +7,22 @@ class StatefulFullForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rating1: 'best'
+      open: false
     };
+    this.openSmileSelector = this.openSmileSelector.bind(this)
+  }
+
+  openSmileSelector() {
+  	this.setState({ open: true })
   }
 
 	render() {
-		const { rating1 } = this.state;
+		const { open } = this.state;
 		return (
 
 			<FullForm
-				rating1={rating1}
+				open={open}
+				openSmileSelector={this.openSmileSelector}
 				{...this.props}
 			/>
 		)
