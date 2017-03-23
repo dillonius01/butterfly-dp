@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeClassNames } from '../redux/selectors';
 
+import StarIcon from './StarIcon';
+
 const Scrollbar = ({ question, handleScoreChange, selected, handleMouseEnter, handleMouseLeave }) => (
 	<div className="scrollbar-container">
 		<div className="scroller-wrapper">
@@ -14,7 +16,7 @@ const Scrollbar = ({ question, handleScoreChange, selected, handleMouseEnter, ha
 						onClick={handleScoreChange}
 					>
 						<div data-val={num} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`${makeClassNames(num)} ${(selected === num) ? 'selected' : null}`}>
-							<img src="/public/assets/StarIcon.svg" />
+							<StarIcon fill={(num === selected) ? 'red' : null} />
 						</div>
 					</div>
 				))

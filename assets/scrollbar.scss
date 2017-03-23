@@ -32,9 +32,13 @@
 			right: 0;
 			margin: auto;
 			bottom: -12.5px;
+
+			&:hover {
+				cursor: pointer;
+			}
 			
 			&.selected {
-				background-color: blue;
+				background-color: $full-form-top-green;
 			}
 
 			&.left {
@@ -57,7 +61,7 @@
 				margin-right: 0;
 			}
 
-			img {
+			svg {
 				width: 100%;
 				vertical-align: middle;
 			}
