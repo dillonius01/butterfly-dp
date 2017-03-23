@@ -21,3 +21,12 @@ $fill-yellow: #ffdc00;
   background: -moz-linear-gradient($top, $bottom);
   background: linear-gradient($top, $bottom);  
 }
+
+
+@mixin half-colored($color, $break1, $break2) {
+	background: $color;
+	background: -webkit-linear-gradient(left, $color, $color $break1, rgba(0,0,0,0) $break2, rgba(0,0,0,0) 100%);
+  background: -o-linear-gradient(left, $color, $color $break1, rgba(0,0,0,0) $break2, rgba(0,0,0,0) 100%); 
+  background: -moz-linear-gradient(left, $color, $color $break1, rgba(0,0,0,0) $break2, rgba(0,0,0,0) 100%);
+  background: linear-gradient(left, $color, $color $break1, rgba(0,0,0,0) $break2, rgba(0,0,0,0) 100%);
+}

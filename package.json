@@ -8,7 +8,8 @@
     "start": "node server",
     "dev": "nodemon --watch server -e js server",
     "build": "webpack",
-    "build-watch": "webpack -w"
+    "build-watch": "webpack -w",
+    "postinstall": "npm run build"
   },
   "author": "dillonius01",
   "license": "ISC",

@@ -58,31 +58,62 @@ export const shuffleArr = arr => {
 	return arr;
 }
 
-export const makeClassNames = num => {
-	let classes = 'star-img-parent';
+const getPositionClass = num => {
 	switch (num) {
 		case 1:
-			classes += ' left';
-			break;
+			return 'left';
 		case 2:
-			classes += ' mid-left';
-			break;
+			return 'mid-left';
 		case 3:
-			classes += ' middle';
-			break;
+			return 'middle';
 		case 4:
-			classes += ' mid-right';
-			break;
+			return 'mid-right';
 		case 5:
-			classes += ' right';
-			break;
+			return 'right';
+	}
+}
+
+const getColor = selected => {
+	switch (selected) {
+		case 1:
+			return '';
+		case 2:
+			return 'orange';
+		case 3:
+			return 'tangerine';
 		default:
-			return classes;
+			return 'yellow';
+	}
+}
+
+export const makeStarClassNames = (num, selected) => {
+	let classes = 'star-img-parent ';
+	const position = getPositionClass(num);
+	classes += position;
+	if (selected === num) {
+		classes += ' selected'
+	}
+	if (selected === 1) {
+		classes += ' worst';
+	}
+	if (selected === 5) {
+		classes += ' best';
 	}
 	return classes;
 }
 
 export const makeClassNamesFiller = (num, selected) => {
 	let classes = 'star-wrapper ';
+	const color = getColor(selected);
+	const position = getPositionClass(num);
+
+	if (!selected || (num > selected)) {
+		classes += '';
+	} else if (num < selected) {
+		classes += `${color} ${position}`
+	} else {
+		classes += `${position}-${color}`
+	}
+
 	return classes;
 }

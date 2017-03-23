@@ -21,9 +21,37 @@
 		display: inline-block;
 		width: 20%;
 		position: relative;
+		
+		&.left {
+			border-radius: 10px 0px 0px 10px;
+		}
 
-		&.filled {
-			background-color: green;
+		&.orange {
+			background-color: $fill-orange;
+		}
+
+		&.tangerine {
+			background-color: $fill-tangerine;
+		}
+
+		&.yellow {
+			background-color: $fill-yellow;
+		}
+
+		&.mid-left-orange {
+			@include half-colored($fill-orange, 50%, 51%)
+		}
+
+		&.middle-tangerine {
+			@include half-colored($fill-tangerine, 50%, 51%)
+		}
+
+		&.mid-right-yellow {
+			@include half-colored($fill-yellow, 50%, 51%)
+		}
+
+		&.right-yellow {
+			@include half-colored($fill-yellow, 70%, 71%)
 		}
 			
 		.star-img-parent {
@@ -43,6 +71,15 @@
 			
 			&.selected {
 				background-color: $full-form-top-green;
+				
+				&.worst {
+					background-color: $fill-red;
+				}
+
+				&.best {
+					background-color: $left-menu-green;
+				}
+
 			}
 
 			&.left {
