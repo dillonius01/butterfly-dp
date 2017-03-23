@@ -13,6 +13,12 @@ export const clearRating = () => ({
 	type: CLEAR_RATING
 });
 
+// export const updateRatingAndToggleUI = fn => evt => {
+//   const level = evt.target.getAttribute('value');
+//   fn();
+//   return updateRating(level);
+// }
+
 /* -------------       REDUCER     ------------------- */
 
 const reducer = (state = null, action) => {

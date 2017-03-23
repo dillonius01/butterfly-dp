@@ -1,7 +1,12 @@
-$off-white: #f7f7f7;
 $teal: #2ce6ce;
 $left-menu-green: #0d4d54;
 $full-form-top-green: #166e78;
+
+$text-grey: #757575;
+$medium-grey: #ededed;
+$light-grey: #c3c3c3;
+$off-white: #f7f7f7;
+$pale-white: #ffffff;
 
 @mixin lin-grad($top, $bottom) {
 	background: $top;
@@ -10,5 +15,3 @@ $full-form-top-green: #166e78;
   background: -moz-linear-gradient($top, $bottom);
   background: linear-gradient($top, $bottom);  
 }
-
-//

@@ -1,0 +1,31 @@
+.scrollbar-container {
+	.scroller-labels {
+		display: flex;
+		justify-content: space-between;
+		color: $text-grey;
+	}
+
+	.scroller-wrapper {
+		display: flex;
+		justify-content: space-between;
+		background-color: $off-white;
+		padding: 0.2rem;
+		border-radius: 20px;
+		border: solid 5px $medium-grey;
+	}
+
+	.star-wrapper {
+		display: inline-block;
+		text-align: middle;
+
+		img {
+			width: 100%;
+			vertical-align: middle;
+		}
+	}
+
+
+	
+}
+
+

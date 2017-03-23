@@ -3,8 +3,11 @@ import React from 'react';
 import LeftMenu from './LeftMenu';
 import SmileEditor from '../containers/SmileEditor';
 import SmileDisplay from '../containers/SmileDisplay';
+import Feedback from '../containers/Feedback';
 
-const FullForm = ({ open, openSmileEditor, closeSmileEditor }) => (
+const FullForm = ({
+	open, openSmileEditor, closeSmileEditor,
+	questions, handleCommentChange, handleScoreChange }) => (
   <div id="full-form-container">
 		<LeftMenu />
 
@@ -15,8 +18,19 @@ const FullForm = ({ open, openSmileEditor, closeSmileEditor }) => (
 					<SmileDisplay openSmileEditor={openSmileEditor} />
 				}
 			</div>
+			<div id="full-form-preface">
+				<h3>Do you agree with the following statements:</h3>
+			</div>
 			<div id="full-form-questions">
-				Questions go here bruh
+				{
+					questions && questions.map(question => (
+						<Feedback
+							key={question.id}
+							question={question}
+							handleCommentChange={handleCommentChange}
+							handleScoreChange={handleScoreChange} />
+						))
+				}
 			</div>
 		</div>
   </div>
@@ -25,7 +39,10 @@ const FullForm = ({ open, openSmileEditor, closeSmileEditor }) => (
 FullForm.propTypes = {
 	open: React.PropTypes.bool.isRequired,
 	openSmileEditor: React.PropTypes.func.isRequired,
-	closeSmileEditor: React.PropTypes.func.isRequired
+	closeSmileEditor: React.PropTypes.func.isRequired,
+	questions: React.PropTypes.array.isRequired,
+	handleCommentChange: React.PropTypes.func.isRequired,
+	handleScoreChange: React.PropTypes.func.isRequired
 }
 
 export default FullForm;
