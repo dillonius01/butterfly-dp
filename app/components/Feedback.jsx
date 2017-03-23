@@ -1,5 +1,5 @@
 import React from 'react';
-import Scrollbar from './Scrollbar';
+import Scrollbar from '../containers/Scrollbar';
 
 const Feedback = ({ question, open, openComment, handleCommentChange, handleScoreChange }) => (
 	<div className="form-feedback-container">

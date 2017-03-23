@@ -57,3 +57,27 @@ export const shuffleArr = arr => {
 	}
 	return arr;
 }
+
+export const makeClassNames = num => {
+	let classes = 'star-img-parent';
+	switch (num) {
+		case 1:
+			classes += ' left';
+			break;
+		case 2:
+			classes += ' mid-left';
+			break;
+		case 3:
+			classes += ' middle';
+			break;
+		case 4:
+			classes += ' mid-right';
+			break;
+		case 5:
+			classes += ' right';
+			break;
+		default:
+			return classes;
+	}
+	return classes;
+}

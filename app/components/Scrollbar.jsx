@@ -1,6 +1,7 @@
 import React from 'react';
+import { makeClassNames } from '../redux/selectors';
 
-const Scrollbar = ({ question, handleScoreChange }) => (
+const Scrollbar = ({ question, handleScoreChange, selected, handleMouseEnter, handleMouseLeave }) => (
 	<div className="scrollbar-container">
 		<div className="scroller-wrapper">
 			{
@@ -12,14 +13,16 @@ const Scrollbar = ({ question, handleScoreChange }) => (
 						key={num}
 						onClick={handleScoreChange}
 					>
-						<img src="/public/assets/StarIcon.svg" />
+						<div data-val={num} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`${makeClassNames(num)} ${(selected === num) ? 'selected' : null}`}>
+							<img src="/public/assets/StarIcon.svg" />
+						</div>
 					</div>
 				))
 			}
 		</div>
 		<div className="scroller-labels">
-			<span>Agree</span>
 			<span>Disagree</span>
+			<span>Agree</span>
 		</div>
 	</div>
 );

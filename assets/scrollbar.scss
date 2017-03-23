@@ -2,25 +2,66 @@
 	.scroller-labels {
 		display: flex;
 		justify-content: space-between;
+		margin-top: 1rem;
 		color: $text-grey;
 	}
 
 	.scroller-wrapper {
 		display: flex;
 		justify-content: space-between;
-		background-color: $off-white;
-		padding: 0.2rem;
+		height: 1rem;
+
+		background-color: $light-grey;
+		padding: 0.4rem;
 		border-radius: 20px;
 		border: solid 5px $medium-grey;
 	}
 
 	.star-wrapper {
 		display: inline-block;
-		text-align: middle;
+		width: 20%;
+		position: relative;
+			
+		.star-img-parent {
+			width: 25%;
+			text-align: middle;
+			position: absolute;
+			padding: 0.5rem;
+			border-radius: 100%;
+			left: 0;
+			right: 0;
+			margin: auto;
+			bottom: -12.5px;
+			
+			&.selected {
+				background-color: blue;
+			}
 
-		img {
-			width: 100%;
-			vertical-align: middle;
+			&.left {
+				margin-left: 0;
+			}
+
+			&.mid-left {
+				margin-left: 16.66%;
+			}
+
+			&.middle {
+				margin: auto;
+			}
+
+			&.mid-right {
+				margin-right: 16.66%;
+			}
+
+			&.right {
+				margin-right: 0;
+			}
+
+			img {
+				width: 100%;
+				vertical-align: middle;
+			}
+			
 		}
 	}
 
