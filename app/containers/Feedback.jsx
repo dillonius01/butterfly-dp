@@ -17,14 +17,13 @@ class FeedbackContainer extends Component {
 	componentWillReceiveProps(nextProps) {
 		const oldScore = this.props.question.score;
 		const newScore = nextProps.question.score;
+		const noOldComment = !this.props.question.comment;
 		const noComment = !nextProps.question.comment;
 
-		if (oldScore === newScore) {
-			return;
-		} else if (nextProps.question.score < 4) {
+		if ((newScore !== oldScore) && newScore < 4) {
 			this.openComment();
-		} else if (noComment) {
-			this.setState({ open: false });
+		} else if (noOldComment && noComment && newScore >= 4) {
+			this.setState({ open: false })
 		}
 	}
 
