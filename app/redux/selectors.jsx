@@ -81,3 +81,8 @@ export const makeClassNames = num => {
 	}
 	return classes;
 }
+
+export const makeClassNamesFiller = (num, selected) => {
+	let classes = 'star-wrapper ';
+	return classes;
+}

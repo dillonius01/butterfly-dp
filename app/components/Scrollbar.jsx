@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeClassNames } from '../redux/selectors';
+import { makeClassNames, makeClassNamesFiller } from '../redux/selectors';
 
 import StarIcon from './StarIcon';
 
@@ -10,7 +10,7 @@ const Scrollbar = ({ question, handleScoreChange, selected, handleMouseEnter, ha
 				[1, 2, 3, 4, 5].map(num => (
 					<div
 						data-id={question.id}
-						className="star-wrapper"
+						className={makeClassNamesFiller(num, selected)}
 						value={num}
 						key={num}
 						onClick={handleScoreChange}

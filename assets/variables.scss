@@ -8,6 +8,12 @@ $light-grey: #c3c3c3;
 $off-white: #f7f7f7;
 $pale-white: #ffffff;
 
+$fill-red: #e95666;
+
+$fill-orange: #f98371;
+$fill-tangerine: #f7a062;
+$fill-yellow: #ffdc00;
+
 @mixin lin-grad($top, $bottom) {
 	background: $top;
 	background: -webkit-linear-gradient($top, $bottom);

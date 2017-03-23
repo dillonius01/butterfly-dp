@@ -21,6 +21,10 @@
 		display: inline-block;
 		width: 20%;
 		position: relative;
+
+		&.filled {
+			background-color: green;
+		}
 			
 		.star-img-parent {
 			width: 25%;
