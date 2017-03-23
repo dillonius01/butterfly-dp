@@ -2,20 +2,25 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FullForm from '../components/FullForm';
 import { createQuestions, formatQuestions } from '../redux/selectors';
+import { submitFeedback } from '../redux/feedback';
+import { browserHistory } from 'react-router';
 
-
-class StatefulFullForm extends Component {
+class FullFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       open: false,
-      questions: formatQuestions(createQuestions())
+      questions: formatQuestions(createQuestions()),
+      lastComment: ''
     };
     this.openSmileEditor = this.openSmileEditor.bind(this);
     this.closeSmileEditor = this.closeSmileEditor.bind(this);
     this.handleCommentChange = this.handleCommentChange.bind(this);
     this.handleScoreChange = this.handleScoreChange.bind(this);
     this.updateQuestion = this.updateQuestion.bind(this);
+    this.handleLastCommentChange = this.handleLastCommentChange.bind(this);
+    this.checkIfFormValid = this.checkIfFormValid.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
   openSmileEditor(evt) {
@@ -43,11 +48,6 @@ class StatefulFullForm extends Component {
     this.setState({ questions: newQuestionsArr });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // for debugging only, WIP
-    console.log('updated and now state is ', this.state)
-  }
-
   handleCommentChange(evt) {
     const questionId = +evt.target.getAttribute('data-id');
     const comment = evt.target.value;
@@ -60,8 +60,21 @@ class StatefulFullForm extends Component {
     this.updateQuestion(questionId, { score });
   }
 
+  handleLastCommentChange(evt) {
+    const lastComment = evt.target.value;
+    this.setState({ lastComment });
+  }
+
   checkIfFormValid() {
-    return !this.state.questions.find(question => question.score <= 0);
+    return !!this.state.questions.find(question => question.score <= 0);
+  }
+
+  submitForm() {
+    const { dispatchForm, rating } = this.props;
+    const { questions, optionalComment } = this.state;
+    const feedback = Object.assign({}, { questions, rating, optionalComment });
+    dispatchForm(feedback);
+    browserHistory.push('/success')
   }
 
 	render() {
@@ -75,6 +88,9 @@ class StatefulFullForm extends Component {
         closeSmileEditor={this.closeSmileEditor}
         handleCommentChange={this.handleCommentChange}
         handleScoreChange={this.handleScoreChange}
+        handleLastCommentChange={this.handleLastCommentChange}
+        checkIfFormValid={this.checkIfFormValid}
+        submitForm={this.submitForm}
 				{...this.props}
 			/>
 		)
@@ -83,5 +99,8 @@ class StatefulFullForm extends Component {
 
 
 const mapStateToProps = ({ rating }) => ({ rating });
+const mapDispatchToProps = dispatch => ({
+  dispatchForm: feedback => dispatch(submitFeedback(feedback))
+});
 
-export default connect(mapStateToProps, null)(StatefulFullForm);
+export default connect(mapStateToProps, mapDispatchToProps)(FullFormContainer);

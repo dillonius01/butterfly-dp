@@ -14,7 +14,7 @@ const Feedback = ({ question, open, openComment, handleCommentChange, handleScor
 			<div className="comment-container">
 				{
 					open ?
-					<input
+					<textarea
 						onChange={handleCommentChange}
 						data-id={question.id}
 						className="comment"

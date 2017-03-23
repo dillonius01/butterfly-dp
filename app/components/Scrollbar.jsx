@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStarClassNames, makeClassNamesFiller } from '../redux/selectors';
+import { makeStarClassNames, makeClassNamesFiller } from '../utils';
 
 import StarIcon from './StarIcon';
 

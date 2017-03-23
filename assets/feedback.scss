@@ -3,7 +3,7 @@
 	width: 600px;
 	max-width: 75vw;
 	display: flex;
-	margin-bottom: 2rem;
+	padding-bottom: 2rem;
 
 	.triangle {
 		width: 0; 
@@ -12,6 +12,10 @@
 		border-bottom: 10px solid transparent; 
 		border-right: 10px solid $pale-white;
 		margin-top: 20px;
+
+		&.blue {
+			border-right: 10px solid $form-blue;
+		}
 	}
 
 	.form-feedback-content {
@@ -19,10 +23,18 @@
 		padding: 2rem;
 		border-radius: 10px;
 		width: 100%;
+		
+		&.blue {
+			background-color: $form-blue;
+		}
 
 		.form-prompt {
 			color: $text-grey;
 			width: 80%;
+			&.white {
+				color: $pale-white;
+			}
+
 			h3 {
 				margin-top: 0;
 			}

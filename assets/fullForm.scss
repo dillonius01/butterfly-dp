@@ -10,3 +10,27 @@
 #full-form-preface {
 	color: $off-white;
 }
+
+#submit-btn-container {
+	button {
+
+		color: $form-blue;
+		border: none;
+		padding: 1rem 3rem 1rem 3rem;
+		background-color: $off-white;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 1rem;
+		margin-bottom: 1rem;
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+		&.disabled {
+			cursor: not-allowed;
+			color: $light-grey;
+		}
+	}
+}

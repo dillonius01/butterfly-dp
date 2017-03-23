@@ -1,27 +1,23 @@
+import { CLEAR_ALL } from './rating';
+
 /* -----------------    ACTIONS     ------------------ */
-const UPDATE_RATING = 'UPDATE_RATING';
-export const CLEAR_ALL = 'CLEAR_ALL';
+const SUBMIT_FEEDBACK = 'SUBMIT_FEEDBACK';
 
 /* ------------   ACTION CREATORS     ----------------- */
 
-export const updateRating = rating => ({
-  type: UPDATE_RATING,
-  rating: +rating
+export const submitFeedback = feedback => ({
+  type: SUBMIT_FEEDBACK,
+  feedback
 });
-
-export const clearAll = () => ({
-	type: CLEAR_ALL
-});
-
 
 /* -------------       REDUCER     ------------------- */
 
 const reducer = (state = null, action) => {
   switch (action.type) {
-    case UPDATE_RATING:
-      return action.rating;
+    case SUBMIT_FEEDBACK:
+      return action.feedback;
     case CLEAR_ALL:
-    	return null;
+      return null;
     default:
       return state;
   }
