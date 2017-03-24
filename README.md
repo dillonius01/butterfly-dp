@@ -1,4 +1,5 @@
-# react-template
+# butterfly-dp
+### A coding exercise
 
 Bootstrapped from a simple [React template](https://github.com/sjarman91/react-template) by DJ Shane
 
