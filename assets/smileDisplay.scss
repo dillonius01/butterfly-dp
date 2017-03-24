@@ -7,7 +7,7 @@
 		margin-top: -8rem;
 		margin-right: 2rem;
 		
-		@media screen and (max-width: 600px) {
+		@media screen and (max-width: $break-point) {
 			display: none;
 		}
 
@@ -54,12 +54,21 @@
 			background: $off-white;
 			border: 7px solid $off-white;
 			border-radius: 50%;
+			width: 120px;
+			
+			img {
+				width: 100%;
+			}
+
+			@media screen and (max-width: $break-point) {
+				width: 80px;
+			}
 		}
 
 		.feedback-text-container {
 			width: 66%;
-			margin-left: 2rem;
-			margin-right: 2rem;
+			margin: auto;
+			padding: 1em;
 		}
 	}
 }

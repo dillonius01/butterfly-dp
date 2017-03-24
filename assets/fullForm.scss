@@ -1,9 +1,9 @@
 #full-form-content {
 	
-	padding-top: 3rem;
-	padding-left: 3rem;
-	margin-left: 3rem;
-	width: calc(100vw - 6rem);
+	padding-top: 2em;
+	padding-left: 2em;
+	margin-left: 2em;
+	width: calc(100vw - 3rem);
 	@include lin-grad($full-form-top-green, $left-menu-green)
 }
 

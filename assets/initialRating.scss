@@ -1,7 +1,9 @@
 #initial-rating-container {
 	background-color: $teal;
-	padding: 2rem;
+	padding-top: 4rem;
 	text-align: center;
+	min-height: 100vh;
+
 }
 
 .banner {
@@ -13,10 +15,15 @@
 }
 
 .jumbo {
-	width: 60vw;
+	width: 600px;
+	max-width: 600px;
 	display: block;
 	margin: 0 auto;
 	color: #606060;
+
+	@media screen and (max-width: $break-point) {
+		width: 95vw;
+	}
 }
 
 .jumbo-content {
@@ -29,7 +36,7 @@
 }
 
 .jumbo-footer {
-	width: 40vw;
+	width: 250px;
 	display: block;
 	margin: 0 auto;
 	margin-top: 1rem;

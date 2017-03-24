@@ -1,3 +1,11 @@
 #success-container {
-	
+	background-color: $teal;
+	min-height: 100vh;
+	padding: 2rem;
+
+	* {
+		text-align: center;
+		color: $off-white;
+		width: 100%;
+	}
 }

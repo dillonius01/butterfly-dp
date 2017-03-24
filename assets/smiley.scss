@@ -1,7 +1,11 @@
 .smiley {
 	display: inline-block;
-	width: 85px;
-	margin: 0 0.5rem 0 0.5rem;
+	width: 70px;
+	margin: 0.25rem;
+
+	@media screen and (max-width: $break-point) {
+		width: 45px;
+	}
 
 	img {
 		width: 100%;

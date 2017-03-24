@@ -1,9 +1,13 @@
 #smile-editor-container {
 	
 	background-color: $left-menu-green;
-	max-width: 600px;
-	padding: 1rem;
+	width: calc(520px - 2em);
+	padding: 1em;
 	border-radius: 20px;
+
+	@media screen and (max-width: $break-point) {
+		max-width: calc(80vw - 2em);
+	}
 
 	.mistake-text {
 		h4 {

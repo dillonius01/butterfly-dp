@@ -15,6 +15,8 @@ $fill-orange: #f98371;
 $fill-tangerine: #f7a062;
 $fill-yellow: #ffdc00;
 
+$break-point: 630px;
+
 @mixin lin-grad($top, $bottom) {
 	background: $top;
 	background: -webkit-linear-gradient($top, $bottom);
