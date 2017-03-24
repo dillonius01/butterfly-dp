@@ -13,10 +13,11 @@ const Scrollbar = ({ question, handleScoreChange, selected, handleMouseEnter, ha
 						className={makeClassNamesFiller(num, selected)}
 						value={num}
 						key={num}
-						onClick={handleScoreChange}
 					>
 						<div
+							onClick={handleScoreChange}
 							data-val={num}
+							data-id={question.id}
 							onMouseEnter={handleMouseEnter}
 							onMouseLeave={handleMouseLeave}
 							className={`${makeStarClassNames(num, selected)}`}>

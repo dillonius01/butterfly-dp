@@ -56,7 +56,7 @@ class FullFormContainer extends Component {
 
   handleScoreChange(evt) {
     const questionId = +evt.currentTarget.getAttribute('data-id');
-    const score = +evt.currentTarget.getAttribute('value');
+    const score = +evt.currentTarget.getAttribute('data-val');
     this.updateQuestion(questionId, { score });
   }
 
